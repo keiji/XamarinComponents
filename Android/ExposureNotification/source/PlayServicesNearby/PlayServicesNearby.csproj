@@ -24,7 +24,7 @@
     <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=865337</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>19.7.2-eap-alpha02</PackageVersion>
+    <PackageVersion>19.7.2-eap-alpha03</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

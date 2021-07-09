@@ -1,6 +1,6 @@
 var TARGET = Argument ("t", Argument ("target", "ci"));
 
-var NUGET_VERSION = "19.7.2-eap-alpha02";
+var NUGET_VERSION = "19.7.2-eap-alpha03";
 var AAR_URL = "https://github.com/google/exposure-notifications-android/raw/c92f95287471a7a7b43c4e3c554bb4aff40d2ba1/app/libs/play-services-nearby-exposurenotification-1.8.3-eap.aar";
 
 Task ("externals")
