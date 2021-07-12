@@ -1,4 +1,4 @@
-name: .NET
+name: Create-NuGet-Android
 
 on:
   push:
