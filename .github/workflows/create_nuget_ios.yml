@@ -24,7 +24,9 @@ jobs:
         xcode-version: 12
     - uses: actions/checkout@v2
     - name: Create NuGet package
-      run: msbuild -p:Configuration=Release -t:pack
+      run: |
+        cd ${{ github.workspace }}/iOS/ExposureNotification
+        msbuild -p:Configuration=Release -t:pack
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
