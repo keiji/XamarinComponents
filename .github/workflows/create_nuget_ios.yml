@@ -1,0 +1,31 @@
+name: .NET
+
+on:
+  push:
+    branches: [ use_github_actions ]
+  pull_request:
+    branches: [ use_github_actions ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Setup Xamarin
+      uses: maxim-lobanov/setup-xamarin@v1
+      with:
+        mono-version: 6.12 # specify version in '<major>.<minor>' format
+        xamarin-ios-version: 14.0 # specify version in '<major>' format
+        xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
+        xamarin-android-version: 11.2 # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
+        xcode-version: 12
+    - uses: actions/checkout@v2
+    - name: Run the Cake script
+      uses: cake-build/cake-action@v1
+      with:
+        script-path: ${{ github.workspace }}/iOS/ExposureNotification/build.cake
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget_ios
+        path: ${{ github.workspace }}/Android/ExposureNotification/output
+        retention-days: 14
