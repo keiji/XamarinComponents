@@ -29,6 +29,7 @@ jobs:
         msbuild -t:restore
     - name: Create NuGet package
       run: |
+        cd ${{ github.workspace }}/iOS/ExposureNotification
         msbuild -p:Configuration=Release -t:pack
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
