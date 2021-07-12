@@ -1,0 +1,23 @@
+name: .NET
+
+on:
+  push:
+    branches: [ use_github_actions ]
+  pull_request:
+    branches: [ use_github_actions ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: |
+      cd ${{ github.workspace }}/Android/ExposureNotification
+      dotnet cake
