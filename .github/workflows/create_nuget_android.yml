@@ -17,8 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Build ExposureNotification Android
+    - name: Prepare
       run: |
         cd ${{ github.workspace }}/Android/ExposureNotification
         dotnet new tool-manifest
+    - name: Build ExposureNotification Android
+      run: |
         dotnet cake
