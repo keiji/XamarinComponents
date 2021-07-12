@@ -20,4 +20,5 @@ jobs:
     - name: Build ExposureNotification Android
       run: |
         cd ${{ github.workspace }}/Android/ExposureNotification
+        dotnet new tool-manifest
         dotnet cake
